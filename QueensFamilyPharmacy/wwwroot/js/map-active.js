@@ -1,7 +1,7 @@
 $(document).ready(function(){
 /*====================================
 	Google Map JS
-======================================*/ 	
+======================================	
 (function(){
 
 	var map;
@@ -76,5 +76,5 @@ $(document).ready(function(){
 
 	map.setStyle("map_style");
 }());
-
+*/ 
 });

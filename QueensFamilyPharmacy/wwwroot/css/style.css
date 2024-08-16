@@ -602,7 +602,7 @@ body{
 	margin-top:150px;
 }
 .slider .single-slider h1 {
-	color: white;
+	color: #ff724a;
 	font-size: 38px;
 	font-weight: 700;
 	margin: 0;
@@ -904,7 +904,7 @@ body{
 	padding:120px 0;
 }
 .fun-facts{
-	background:url('img/fun-bg.jpg');
+	background-image:url("../img/fun-bg.jpg");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
@@ -1070,7 +1070,7 @@ body{
 	Start Call to action CSS
 =================================*/
 .call-action{
-	background-image:url('img/call-bg.jpg');
+	background-image:url("../img/slider.png");
 	background-size:cover;
 	background-position:center;
 	position:relative;

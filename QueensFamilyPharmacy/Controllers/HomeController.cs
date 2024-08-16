@@ -16,21 +16,52 @@ namespace QueensFamilyPharmacy.Controllers
         }
 
         public IActionResult Index()
-        {            
-            //_emailSender.SendEmail("dhruvpatel1093@gmail.com", "User Regitered");            
-            return View();
-        }
-        public IActionResult QuickRefill()
         {
+            //_emailSender.SendEmail("demonsrontheway@gmail.com", "User Regitered");            
             return View();
         }
-        public IActionResult TransferPrescription()
+        [HttpPost]
+        public IActionResult QuickRefill(QuickRefill quickRefill)
         {
-            return View();
+            string Msg = string.Empty;
+            try
+            {
+				_emailSender.SendEmail(quickRefill.QEmail, "Queen's Quick Refill", quickRefill);
+				Msg = "Thank You, Raising Request For Quick Refill";
+			}
+            catch (Exception)
+            {
+                Msg = "We are currently experiencing technical difficulties. please try again later";
+			}            
+            return View(Msg);
         }
-        public IActionResult ContactUs() { 
-
-            return View();
+        public IActionResult TransferPrescription(QuickRefill quickRefill)
+        {
+			string Msg = string.Empty;
+            try
+            {
+				_emailSender.SendEmail(quickRefill.QEmail, "Request to Transfer Prescription into Queen's Family Pharmacy", quickRefill);
+				Msg = "Thank You, Raising Request For Transfer Prescription";
+			}
+            catch (Exception)
+            {
+				Msg = "We are currently experiencing technical difficulties. please try again later";
+			}			
+            return View(Msg);
+        }
+        public IActionResult ContactUs(QuickRefill quickRefill)
+        {
+			string Msg = string.Empty;
+			try
+            {
+				_emailSender.SendEmail(quickRefill.QEmail, "Contact With Us", quickRefill);
+				Msg = "Thank You, Contact With Us";
+			}
+            catch (Exception)
+            {
+				Msg = "We are currently experiencing technical difficulties. please try again later";
+			}            
+            return View(Msg);
         }
 
         public IActionResult Privacy()
