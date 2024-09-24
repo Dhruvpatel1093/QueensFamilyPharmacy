@@ -4,5 +4,6 @@
     {        
         public string UserName { get; set; } = String.Empty;
         public string Pwd { get; set; } = String.Empty;
+        public string FromEmail { get; set; } = String.Empty;
     }
 }

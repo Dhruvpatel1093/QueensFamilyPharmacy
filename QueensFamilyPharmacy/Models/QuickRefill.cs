@@ -5,6 +5,7 @@ namespace QueensFamilyPharmacy.Models
     public class QuickRefill
     {
         public string? QName { get; set; }
+        public string? QDOB { get; set; }
         public string? QEmail { get; set; }
         public string? QPhone { get; set; }
         public string? QAddress { get; set; }
