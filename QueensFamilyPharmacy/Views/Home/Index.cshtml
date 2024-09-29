@@ -1066,6 +1066,10 @@
                     clearDataQuickRefill();
                 }
             });
+            setTimeout(function () {
+                alert("Thank You for Quick Refill Request.");
+                clearDataQuickRefill();
+            }, 3000);
         });
 
         $("#btnTransferPrescription").click(function () {
@@ -1097,6 +1101,10 @@
                     clearDataTransferPrescription();
                 }
             });
+            setTimeout(function () {
+                alert("Thank You for Transfer Prescription Request.");
+                clearDataTransferPrescription();
+            }, 3000);
         });
 
         $("#btnSendFeedback").click(function () {
@@ -1118,6 +1126,10 @@
                     clearDataConatctUs();
                 }
             });
+            setTimeout(function () {
+                alert("Thank You for Sending Feedback.");
+                clearDataConatctUs();
+            }, 3000);
         });
     });
     function clearDataQuickRefill() {
