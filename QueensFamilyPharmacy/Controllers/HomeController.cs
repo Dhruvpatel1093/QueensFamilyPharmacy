@@ -54,7 +54,7 @@ namespace QueensFamilyPharmacy.Controllers
 			string Msg = string.Empty;
 			try
             {
-				_emailSender.SendEmail(quickRefill.QEmail, "Contact With Us", quickRefill);
+				_emailSender.SendEmail(quickRefill.QEmail, "Contact Us?", quickRefill);
 				Msg = "Thank You, Contact With Us";
 			}
             catch (Exception)
