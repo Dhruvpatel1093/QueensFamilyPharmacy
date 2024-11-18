@@ -20,6 +20,8 @@ namespace QueensFamilyPharmacy.Models
                 credential.UserName = _config.GetValue<string>("EmailCredentials:UserName");
                 credential.Pwd = _config.GetValue<string>("EmailCredentials:Pwd");
                 credential.FromEmail = _config.GetValue<string>("EmailCredentials:FromEmail");
+                credential.Port = Convert.ToInt32(_config.GetValue<string>("EmailCredentials:Port"));
+                credential.SmtpServer = _config.GetValue<string>("EmailCredentials:SmtpServer");
 
                 if (toEmail == null)
                 {
@@ -30,7 +32,7 @@ namespace QueensFamilyPharmacy.Models
                     toEmail = toEmail + credential.FromEmail;
                 }
                 // Set up SMTP client
-                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+                SmtpClient client = new SmtpClient(credential.SmtpServer, credential.Port);
                 client.EnableSsl = true;
                 client.UseDefaultCredentials = false;
                 client.Credentials = new NetworkCredential(credential.UserName, credential.Pwd);
